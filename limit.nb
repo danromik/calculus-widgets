@@ -1,0 +1,612 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     25075,        603]
+NotebookOptionsPosition[     24641,        584]
+NotebookOutlinePosition[     25097,        602]
+CellTagsIndexPosition[     25054,        599]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"y", "=", 
+     RowBox[{
+      RowBox[{"c", "^", "3"}], "-", 
+      RowBox[{"8", "c"}], "+", "1"}]}], ";", 
+    RowBox[{"y2", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"c", "-", "\[Delta]"}], ")"}], "^", "3"}], "-", 
+      RowBox[{"8", 
+       RowBox[{"(", 
+        RowBox[{"c", "-", "\[Delta]"}], ")"}]}], "+", "1"}]}], ";", 
+    RowBox[{"y3", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"c", "+", "\[Delta]"}], ")"}], "^", "3"}], "-", 
+      RowBox[{"8", 
+       RowBox[{"(", 
+        RowBox[{"c", "+", "\[Delta]"}], ")"}]}], "+", "1"}]}], ";", 
+    RowBox[{"good", "=", 
+     RowBox[{"Apply", "[", 
+      RowBox[{"And", ",", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"y", "-", "\[CurlyEpsilon]"}], "<", 
+          RowBox[{
+           RowBox[{"z", "^", "3"}], "-", 
+           RowBox[{"8", "z"}], "+", "1"}], "<", 
+          RowBox[{"y", "+", "\[CurlyEpsilon]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"z", ",", 
+           RowBox[{"c", "-", "\[Delta]"}], ",", 
+           RowBox[{"c", "+", "\[Delta]"}], ",", 
+           RowBox[{"\[Delta]", "/", "5"}]}], "}"}]}], "]"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Row", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Show", "[", 
+        RowBox[{
+         RowBox[{"Plot", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"z", "^", "3"}], "-", 
+            RowBox[{"8", "z"}], "+", "1"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"z", ",", 
+             RowBox[{"-", "3"}], ",", "4"}], "}"}], ",", 
+           RowBox[{"PlotStyle", "\[Rule]", 
+            RowBox[{"AbsoluteThickness", "[", "3", "]"}]}], ",", 
+           RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", 
+           RowBox[{"ImageSize", "\[Rule]", "400"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Plot", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"z", "^", "3"}], "-", 
+            RowBox[{"8", "z"}], "+", "1"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"z", ",", 
+             RowBox[{"c", "-", "\[Delta]"}], ",", 
+             RowBox[{"c", "+", "\[Delta]"}]}], "}"}], ",", 
+           RowBox[{"PlotStyle", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"Red", ",", 
+              RowBox[{"AbsoluteThickness", "[", "5", "]"}]}], "}"}]}]}], 
+          "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"RGBColor", "[", 
+               RowBox[{"0.0", ",", "0.4", ",", "0.8", ",", "0.3"}], "]"}], 
+              ",", 
+              RowBox[{"Polygon", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"-", "3"}], ",", 
+                   RowBox[{"y", "-", "\[CurlyEpsilon]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"4", ",", 
+                   RowBox[{"y", "-", "\[CurlyEpsilon]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"4", ",", 
+                   RowBox[{"y", "+", "\[CurlyEpsilon]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"-", "3"}], ",", 
+                   RowBox[{"y", "+", "\[CurlyEpsilon]"}]}], "}"}]}], "}"}], 
+               "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"PointSize", "[", "0.03", "]"}], ",", 
+              RowBox[{"Point", "[", 
+               RowBox[{"{", 
+                RowBox[{"c", ",", "y"}], "}"}], "]"}]}], "}"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"PointSize", "[", "0.015", "]"}], ",", 
+              RowBox[{"Point", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"c", "-", "\[Delta]"}], ",", "y2"}], "}"}], "]"}]}], 
+             "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"PointSize", "[", "0.015", "]"}], ",", 
+              RowBox[{"Point", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"c", "+", "\[Delta]"}], ",", "y3"}], "}"}], "]"}]}], 
+             "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"AbsoluteThickness", "[", "2", "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"c", ",", "0.7"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"c", ",", 
+                   RowBox[{"-", "0.7"}]}], "}"}]}], "}"}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"c", "-", "\[Delta]"}], ",", "0.7"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"c", "-", "\[Delta]"}], ",", 
+                   RowBox[{"-", "0.7"}]}], "}"}]}], "}"}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"c", "+", "\[Delta]"}], ",", "0.7"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"c", "+", "\[Delta]"}], ",", 
+                   RowBox[{"-", "0.7"}]}], "}"}]}], "}"}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"-", "0.12"}], ",", "y"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"0.12", ",", "y"}], "}"}]}], "}"}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"-", "0.12"}], ",", 
+                   RowBox[{"y", "+", "\[CurlyEpsilon]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"0.12", ",", 
+                   RowBox[{"y", "+", "\[CurlyEpsilon]"}]}], "}"}]}], "}"}], 
+               "]"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"-", "0.12"}], ",", 
+                   RowBox[{"y", "-", "\[CurlyEpsilon]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"0.12", ",", 
+                   RowBox[{"y", "-", "\[CurlyEpsilon]"}]}], "}"}]}], "}"}], 
+               "]"}], ","}], "\[IndentingNewLine]", "}"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"x", "^", "3"}], "-", 
+                 RowBox[{"8", "x"}], "+", "1"}], ",", "20"}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "2.1"}], ",", "32"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<c\>\"", ",", "16"}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"c", ",", 
+                RowBox[{"-", "2"}]}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"\[Delta]", ">", "0.25"}], ",", "Black", ",", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"\[Delta]", ">", "0.16"}], ",", 
+                  RowBox[{"GrayLevel", "[", "0.8", "]"}], ",", 
+                  RowBox[{"RGBColor", "[", 
+                   RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "]"}]}], 
+                 "]"}]}], "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{"\"\<c-\[Delta]\>\"", ",", "13"}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"c", "-", "\[Delta]"}], ",", 
+                  RowBox[{"-", "4"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"\[Delta]", ">", "0.25"}], ",", "Black", ",", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"\[Delta]", ">", "0.16"}], ",", 
+                  RowBox[{"GrayLevel", "[", "0.8", "]"}], ",", 
+                  RowBox[{"RGBColor", "[", 
+                   RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "]"}]}], 
+                 "]"}]}], "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{"\"\<c+\[Delta]\>\"", ",", "13"}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"c", "+", "\[Delta]"}], ",", 
+                  RowBox[{"-", "4"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<f(c)\>\"", ",", "16"}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "0.4"}], ",", "y"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"\[CurlyEpsilon]", ">", "1.5"}], ",", "Black", ",", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"\[CurlyEpsilon]", ">", "0.75"}], ",", 
+                  RowBox[{"GrayLevel", "[", "0.8", "]"}], ",", 
+                  RowBox[{"RGBColor", "[", 
+                   RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "]"}]}], 
+                 "]"}]}], "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{"\"\<f(c)-\[CurlyEpsilon]\>\"", ",", "16"}], "]"}], 
+                ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "0.6"}], ",", 
+                  RowBox[{"y", "-", "\[CurlyEpsilon]"}]}], "}"}]}], "]"}]}], 
+             "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"\[CurlyEpsilon]", ">", "1.5"}], ",", "Black", ",", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"\[CurlyEpsilon]", ">", "0.75"}], ",", 
+                  RowBox[{"GrayLevel", "[", "0.8", "]"}], ",", 
+                  RowBox[{"RGBColor", "[", 
+                   RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "]"}]}], 
+                 "]"}]}], "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{"\"\<f(c)+\[CurlyEpsilon]\>\"", ",", "16"}], "]"}], 
+                ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "0.6"}], ",", 
+                  RowBox[{"y", "+", "\[CurlyEpsilon]"}]}], "}"}]}], "]"}]}], 
+             "}"}]}], "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", 
+          "]"}]}], "\[IndentingNewLine]", "]"}], ",", "\"\<  \>\"", ",", 
+       RowBox[{"Show", "[", 
+        RowBox[{
+         RowBox[{"Graphics", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"AbsoluteThickness", "[", "4", "]"}], ",", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"!", "Face"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"White", ",", 
+                RowBox[{"Circle", "[", "]"}]}], "}"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
+               RowBox[{"good", ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"Circle", "[", "]"}], ",", 
+                  RowBox[{"Disk", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "0.4"}], ",", "0.4"}], "}"}], ",", "0.12"}], 
+                   "]"}], ",", 
+                  RowBox[{"Disk", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0.4", ",", "0.4"}], "}"}], ",", "0.12"}], "]"}], 
+                  ",", 
+                  RowBox[{"Circle", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0"}], "}"}], ",", "0.5", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "0.2"}], "Pi"}], ",", 
+                    RowBox[{
+                    RowBox[{"-", "Pi"}], "+", 
+                    RowBox[{"0.2", "Pi"}]}]}], "}"}]}], "]"}]}], "}"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"Circle", "[", "]"}], ",", 
+                  RowBox[{"Disk", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "0.4"}], ",", "0.4"}], "}"}], ",", "0.12"}], 
+                   "]"}], ",", 
+                  RowBox[{"Disk", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0.4", ",", "0.4"}], "}"}], ",", "0.12"}], "]"}], 
+                  ",", 
+                  RowBox[{"Circle", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", 
+                    RowBox[{"-", "0.75"}]}], "}"}], ",", "0.5", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"0.2", "Pi"}], ",", 
+                    RowBox[{"Pi", "-", 
+                    RowBox[{"0.2", "Pi"}]}]}], "}"}]}], "]"}]}], "}"}]}], 
+               "]"}]}], "]"}]}], "}"}], "]"}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", "100"}]}], "]"}]}], "}"}], "]"}]}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"c", ",", "3.5"}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[CurlyEpsilon]", ",", "0.05", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Delta]", ",", "0.01", ",", "0.75"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Face", ",", 
+     RowBox[{"{", 
+      RowBox[{"False", ",", "True"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.5983284924712963`*^9, {3.598328578633195*^9, 3.598328887356678*^9}, {
+   3.598328935000793*^9, 3.598329370764988*^9}, {3.598329474872404*^9, 
+   3.59832949927247*^9}, {3.59832953187497*^9, 3.5983296036113663`*^9}, {
+   3.598329666484679*^9, 3.5983297051500883`*^9}, {3.598329802046815*^9, 
+   3.598329950076926*^9}, {3.5983299968435583`*^9, 3.5983301861849813`*^9}, {
+   3.59833032624866*^9, 3.598330518815728*^9}, {3.598330627412685*^9, 
+   3.5983306275224857`*^9}, {3.5983307591177197`*^9, 3.598330914525182*^9}, {
+   3.5983309788992968`*^9, 3.5983310864039392`*^9}, {3.598331330158729*^9, 
+   3.598331464666627*^9}, {3.5983315011051407`*^9, 3.598331517450859*^9}, {
+   3.5983317209998703`*^9, 3.598331731809868*^9}, {3.598367604277687*^9, 
+   3.598367696998946*^9}, {3.5983677342700033`*^9, 3.5983677343705187`*^9}, 
+   3.598367793597784*^9, {3.598367885635564*^9, 3.598367922809771*^9}, {
+   3.598367954386392*^9, 3.598368061780287*^9}, {3.598369432282394*^9, 
+   3.5983694711744347`*^9}, 3.598369741778096*^9, {3.598369801037113*^9, 
+   3.5983699074145193`*^9}, {3.598369978061966*^9, 3.5983699913447323`*^9}, {
+   3.5983700269838*^9, 3.5983700453516073`*^9}, {3.598370552420127*^9, 
+   3.59837056444051*^9}, {3.598370658919858*^9, 3.5983707084270163`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`c$$ = 3.5, $CellContext`Face$$ = 
+    False, $CellContext`\[Delta]$$ = 0.01, $CellContext`\[CurlyEpsilon]$$ = 
+    0.05, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`c$$], 3.5}, -3, 4}, {
+      Hold[$CellContext`\[CurlyEpsilon]$$], 0.05, 4}, {
+      Hold[$CellContext`\[Delta]$$], 0.01, 0.75}, {
+      Hold[$CellContext`Face$$], {False, True}}}, Typeset`size$$ = {
+    516., {198., 202.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`c$4468$$ = 
+    0, $CellContext`\[CurlyEpsilon]$4469$$ = 0, $CellContext`\[Delta]$4470$$ =
+     0, $CellContext`Face$4471$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`c$$ = 3.5, $CellContext`Face$$ = 
+        False, $CellContext`\[Delta]$$ = 0.01, $CellContext`\[CurlyEpsilon]$$ = 
+        0.05}, "ControllerVariables" :> {
+        Hold[$CellContext`c$$, $CellContext`c$4468$$, 0], 
+        Hold[$CellContext`\[CurlyEpsilon]$$, \
+$CellContext`\[CurlyEpsilon]$4469$$, 0], 
+        Hold[$CellContext`\[Delta]$$, $CellContext`\[Delta]$4470$$, 0], 
+        Hold[$CellContext`Face$$, $CellContext`Face$4471$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`y = $CellContext`c$$^3 - 8 $CellContext`c$$ + 
+         1; $CellContext`y2 = ($CellContext`c$$ - $CellContext`\[Delta]$$)^3 - 
+         8 ($CellContext`c$$ - $CellContext`\[Delta]$$) + 
+         1; $CellContext`y3 = ($CellContext`c$$ + $CellContext`\[Delta]$$)^3 - 
+         8 ($CellContext`c$$ + $CellContext`\[Delta]$$) + 
+         1; $CellContext`good = Apply[And, 
+          
+          Table[$CellContext`y - $CellContext`\[CurlyEpsilon]$$ < \
+$CellContext`z^3 - 8 $CellContext`z + 
+            1 < $CellContext`y + $CellContext`\[CurlyEpsilon]$$, \
+{$CellContext`z, $CellContext`c$$ - $CellContext`\[Delta]$$, $CellContext`c$$ + \
+$CellContext`\[Delta]$$, $CellContext`\[Delta]$$/5}]]; Row[{
+          Show[
+           
+           Plot[$CellContext`z^3 - 8 $CellContext`z + 
+            1, {$CellContext`z, -3, 4}, PlotStyle -> AbsoluteThickness[3], 
+            AspectRatio -> 1, ImageSize -> 400], 
+           
+           Plot[$CellContext`z^3 - 8 $CellContext`z + 
+            1, {$CellContext`z, $CellContext`c$$ - $CellContext`\[Delta]$$, \
+$CellContext`c$$ + $CellContext`\[Delta]$$}, PlotStyle -> {Red, 
+              AbsoluteThickness[5]}], 
+           Graphics[{{
+              RGBColor[0., 0.4, 0.8, 0.3], 
+              
+              Polygon[{{-3, $CellContext`y - $CellContext`\[CurlyEpsilon]$$}, \
+{4, $CellContext`y - $CellContext`\[CurlyEpsilon]$$}, {
+                4, $CellContext`y + $CellContext`\[CurlyEpsilon]$$}, {-3, \
+$CellContext`y + $CellContext`\[CurlyEpsilon]$$}}]}, {
+              PointSize[0.03], 
+              Point[{$CellContext`c$$, $CellContext`y}]}, {
+              PointSize[0.015], 
+              
+              Point[{$CellContext`c$$ - $CellContext`\[Delta]$$, \
+$CellContext`y2}]}, {
+              PointSize[0.015], 
+              
+              Point[{$CellContext`c$$ + $CellContext`\[Delta]$$, \
+$CellContext`y3}]}, {
+              AbsoluteThickness[2], 
+              Line[{{$CellContext`c$$, 0.7}, {$CellContext`c$$, -0.7}}], 
+              
+              Line[{{$CellContext`c$$ - $CellContext`\[Delta]$$, 
+                 0.7}, {$CellContext`c$$ - $CellContext`\[Delta]$$, -0.7}}], 
+              
+              Line[{{$CellContext`c$$ + $CellContext`\[Delta]$$, 
+                 0.7}, {$CellContext`c$$ + $CellContext`\[Delta]$$, -0.7}}], 
+              Line[{{-0.12, $CellContext`y}, {0.12, $CellContext`y}}], 
+              
+              Line[{{-0.12, $CellContext`y + $CellContext`\[CurlyEpsilon]$$}, \
+{0.12, $CellContext`y + $CellContext`\[CurlyEpsilon]$$}}], 
+              
+              Line[{{-0.12, $CellContext`y - $CellContext`\[CurlyEpsilon]$$}, \
+{0.12, $CellContext`y - $CellContext`\[CurlyEpsilon]$$}}], Null}, 
+             Text[
+              Style[$CellContext`x^3 - 8 $CellContext`x + 1, 20], {-2.1, 32}], 
+             Text[
+              Style["c", 16], {$CellContext`c$$, -2}], {
+              If[$CellContext`\[Delta]$$ > 0.25, Black, 
+               If[$CellContext`\[Delta]$$ > 0.16, 
+                GrayLevel[0.8], 
+                RGBColor[0, 0, 0, 0]]], 
+              Text[
+               Style[
+               "c-\[Delta]", 
+                13], {$CellContext`c$$ - $CellContext`\[Delta]$$, -4}]}, {
+              If[$CellContext`\[Delta]$$ > 0.25, Black, 
+               If[$CellContext`\[Delta]$$ > 0.16, 
+                GrayLevel[0.8], 
+                RGBColor[0, 0, 0, 0]]], 
+              Text[
+               Style[
+               "c+\[Delta]", 
+                13], {$CellContext`c$$ + $CellContext`\[Delta]$$, -4}]}, 
+             Text[
+              Style["f(c)", 16], {-0.4, $CellContext`y}], {
+              If[$CellContext`\[CurlyEpsilon]$$ > 1.5, Black, 
+               If[$CellContext`\[CurlyEpsilon]$$ > 0.75, 
+                GrayLevel[0.8], 
+                RGBColor[0, 0, 0, 0]]], 
+              Text[
+               Style[
+               "f(c)-\[CurlyEpsilon]", 
+                16], {-0.6, $CellContext`y - \
+$CellContext`\[CurlyEpsilon]$$}]}, {
+              If[$CellContext`\[CurlyEpsilon]$$ > 1.5, Black, 
+               If[$CellContext`\[CurlyEpsilon]$$ > 0.75, 
+                GrayLevel[0.8], 
+                RGBColor[0, 0, 0, 0]]], 
+              Text[
+               Style[
+               "f(c)+\[CurlyEpsilon]", 
+                16], {-0.6, $CellContext`y + \
+$CellContext`\[CurlyEpsilon]$$}]}}]], "  ", 
+          Show[
+           Graphics[{
+             AbsoluteThickness[4], 
+             If[
+              Not[$CellContext`Face$$], {White, 
+               Circle[]}, 
+              If[$CellContext`good, {
+                Circle[], 
+                Disk[{-0.4, 0.4}, 0.12], 
+                Disk[{0.4, 0.4}, 0.12], 
+                Circle[{0, 0}, 0.5, {(-0.2) Pi, -Pi + 0.2 Pi}]}, {
+                Circle[], 
+                Disk[{-0.4, 0.4}, 0.12], 
+                Disk[{0.4, 0.4}, 0.12], 
+                Circle[{0, -0.75}, 0.5, {0.2 Pi, Pi - 0.2 Pi}]}]]}], 
+           ImageSize -> 100]}]), 
+      "Specifications" :> {{{$CellContext`c$$, 3.5}, -3, 
+         4}, {$CellContext`\[CurlyEpsilon]$$, 0.05, 
+         4}, {$CellContext`\[Delta]$$, 0.01, 0.75}, {$CellContext`Face$$, {
+         False, True}}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{561., {281., 286.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.5983705669742737`*^9, {3.598370687791614*^9, 3.5983707183584557`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1246, 1056},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 16694, 401, 556, "Input"],
+Cell[17276, 425, 7349, 156, 584, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
